@@ -256,26 +256,33 @@ def workspace():
     maybe(
         http_archive,
         name = "com_github_nelhage_rules_boost",
-        # sha256 = "2215e6910eb763a971b1f63f53c45c0f2b7607df38c96287666d94d954da8cdc",
-        strip_prefix = "rules_boost-e60cf50996da9fe769b6e7a31b88c54966ecb191",
-        urls = [
-            "https://github.com/nelhage/rules_boost/archive/e60cf50996da9fe769b6e7a31b88c54966ecb191.tar.gz",
-            "https://ml.cs.tsinghua.edu.cn/~jiayi/envpool/nelhage/rules_boost/e60cf50996da9fe769b6e7a31b88c54966ecb191.tar.gz",
-        ],
+        url = "https://github.com/nelhage/rules_boost/archive/4edd3c2f114e765b117eb5cc1791bd1464882e70.tar.gz",
+        strip_prefix = "rules_boost-4edd3c2f114e765b117eb5cc1791bd1464882e70",
     )
 
-    maybe(
-        http_archive,
-        name = "boost",
-        build_file = "@com_github_nelhage_rules_boost//:boost.BUILD",
-        patch_cmds = ["rm -f doc/pdf/BUILD"],
-        sha256 = "6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e",
-        strip_prefix = "boost_1_83_0",
-        urls = [
-            "https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2",
-            "https://ml.cs.tsinghua.edu.cn/~jiayi/envpool/boost/boost_1_83_0.tar.bz2",
-        ],
-    )
+    #maybe(
+    #    http_archive,
+    #    name = "com_github_nelhage_rules_boost",
+    #    # sha256 = "2215e6910eb763a971b1f63f53c45c0f2b7607df38c96287666d94d954da8cdc",
+    #    strip_prefix = "rules_boost-96e9b631f104b43a53c21c87b01ac538ad6f3b48",
+    #    urls = [
+    #        "https://github.com/nelhage/rules_boost/archive/96e9b631f104b43a53c21c87b01ac538ad6f3b48.tar.gz",
+    #        "https://ml.cs.tsinghua.edu.cn/~jiayi/envpool/nelhage/rules_boost/e60cf50996da9fe769b6e7a31b88c54966ecb191.tar.gz",
+    #    ],
+    #)
+
+    #maybe(
+    #    http_archive,
+    #    name = "boost",
+    #    build_file = "@com_github_nelhage_rules_boost//:BUILD.boost",
+    #    patch_cmds = ["rm -f doc/pdf/BUILD"],
+    #    sha256 = "6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e",
+    #    strip_prefix = "boost_1_83_0",
+    #    urls = [
+    #        "https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2",
+    #        "https://ml.cs.tsinghua.edu.cn/~jiayi/envpool/boost/boost_1_83_0.tar.bz2",
+    #    ],
+    #)
 
     maybe(
         http_archive,

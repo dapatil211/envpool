@@ -151,12 +151,12 @@ class AtariEnv : public Env<AtariEnvSpec> {
   void Reset() override {
     int noop = dist_noop_(gen_) + 1 - static_cast<int>(fire_reset_);
     bool push_all = false;
-    if (!episodic_life_ || env_->game_over() ||
-        elapsed_step_ >= max_episode_steps_) {
-      env_->reset_game();
-      elapsed_step_ = 0;
-      push_all = true;
-    }
+    //if (!episodic_life_ || env_->game_over() ||
+    //    elapsed_step_ >= max_episode_steps_) {
+    env_->reset_game();
+    elapsed_step_ = 0;
+    push_all = true;
+    //}
     while ((noop--) != 0) {
       env_->act(static_cast<ale::Action>(0));
       if (env_->game_over()) {
